@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include
+        layout="@layout/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/ivCode"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/app_icon" />
+
+    <Button
+        android:id="@+id/qrcode_scanner_back_qrcode"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="行動條碼掃描器"
+        android:background="#0242E6"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="20dp"
+        android:onClick="startQRcodeScanner"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/chatroom_rtc_refuse"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_weight="1"
+        app:cb_color="#FF3333"
+        app:cb_pressedRingWidth="8dip"
+        android:src="@drawable/rtc_refuse_call"
+        android:onClick="RefuseCall"/>
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/chatroom_rtc_answer"
+        android:layout_width="80dp"
+        android:layout_height="80dip"
+        android:layout_weight="1"
+        app:cb_color="#99CC00"
+        app:cb_pressedRingWidth="8dip"
+        android:src="@drawable/rtc_call"
+        android:onClick="AnswerCall"/>
+
+
+
+</LinearLayout>

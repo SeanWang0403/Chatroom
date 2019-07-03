@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_friend"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="朋友" />
+
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/ic_chat"
+        android:title="聊天" />
+
+    <item
+        android:id="@+id/navigation_friendInvite"
+        android:icon="@drawable/ic_addfriend"
+        android:title="新增好友" />
+    <item
+        android:id="@+id/navigation_searchFriend"
+        android:icon="@drawable/ic_friend_search"
+        android:title="搜尋好友" />
+    <item
+        android:id="@+id/navigation_userinfo"
+        android:icon="@drawable/ic_edit_usrinfo"
+        android:title="個人資料" />
+
+</menu>

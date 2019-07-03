@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.isseiaoki.simplecropview.CropImageView
+        android:id="@+id/cropsticker_sticker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        custom:scv_guide_show_mode="not_show" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/cropsticker_cropphoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#0242E6"
+            android:textColor="@color/white"
+            android:text="剪裁" />
+
+        <Button
+            android:id="@+id/cropsticker_backuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#1E90FF"
+            android:textColor="@color/white"
+            android:text="返回" />
+    </LinearLayout>
+</LinearLayout>

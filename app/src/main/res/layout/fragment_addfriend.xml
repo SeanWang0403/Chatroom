@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/addFriend_searchType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/addFriend_idSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:checked="true"
+            android:text="ID搜尋" />
+
+        <RadioButton
+            android:id="@+id/addFriend_phoneSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:text="號碼搜尋" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/addFriend_searchValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            android:background="@mipmap/search_bg"
+            android:hint="請輸入要搜尋的ID"
+            android:padding="10sp" />
+
+        <ImageView
+            android:id="@+id/addFriend_Search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/addFriend_searchValue"
+            android:layout_alignRight="@+id/addFriend_searchValue"
+            android:layout_alignBottom="@+id/addFriend_searchValue"
+            android:layout_marginRight="5sp"
+            app:srcCompat="@drawable/ic_search_black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ViewStub
+            android:id="@+id/addFriend_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/addfriend_result_block" />
+
+        <TextView
+            android:id="@+id/addFriend_Nouser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="150dp"
+            android:text="沒有找到用戶"
+            android:textSize="20sp"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

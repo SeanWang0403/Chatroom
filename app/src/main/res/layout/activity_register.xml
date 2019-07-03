@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@mipmap/register_bg">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginBottom="35sp"
+        android:layout_marginTop="25sp"
+        android:src="@mipmap/logo" />
+
+    <EditText
+        android:id="@+id/register_name"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:background="@mipmap/name"
+        android:ems="10"
+        android:hint="姓名"
+        android:inputType="textPersonName"
+        android:paddingLeft="55sp" />
+
+    <EditText
+        android:id="@+id/register_account"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:background="@mipmap/account"
+        android:ems="10"
+        android:hint="帳號"
+        android:inputType="textPersonName"
+        android:paddingLeft="55sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/register_password"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:background="@mipmap/password"
+            android:ems="10"
+            android:hint="密碼"
+            android:inputType="textPassword"
+            android:paddingLeft="55sp" />
+
+        <ImageView
+            android:id="@+id/register_pass_visibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/register_password"
+            android:layout_alignRight="@+id/register_password"
+            android:layout_alignTop="@+id/register_password"
+            android:layout_marginRight="10sp"
+            android:src="@mipmap/password_notvisible" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/register_mail"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:background="@mipmap/mail"
+        android:ems="10"
+        android:hint="電子信箱"
+        android:inputType="textPersonName"
+        android:paddingLeft="60sp" />
+
+    <EditText
+        android:id="@+id/register_phone"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:background="@mipmap/phone"
+        android:ems="10"
+        android:hint="電話號碼"
+        android:inputType="textPersonName"
+        android:paddingLeft="55sp" />
+
+    <Button
+        android:id="@+id/register_buttom"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="15sp"
+        android:background="@drawable/bt_createaccount_type"
+        android:onClick="register"
+        android:text="註冊"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+</LinearLayout>

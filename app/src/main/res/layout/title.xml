@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#0958D6"
+    app:title="這是Title"
+    app:titleTextColor="@color/cardview_light_background">
+
+    <!--app:navigationIcon="@drawable/toolbar_back"-->
+</android.support.v7.widget.Toolbar>
