@@ -22,7 +22,7 @@ public class ImageHandle {
         // 判斷如果圖片大於1M,進行壓縮避免在生成圖片（BitmapFactory.decodeStream）時溢位
         if (baos.toByteArray().length / 1024 > 1024) {
             baos.reset();// 重置baos即清空baos
-            image.compress(Bitmap.CompressFormat.JPEG, 50, baos);// 這裡壓縮80%，把壓縮後的資料存放到baos中
+            image.compress(Bitmap.CompressFormat.JPEG, 80, baos);// 這裡壓縮80%，把壓縮後的資料存放到baos中
         }
         ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());
         BitmapFactory.Options bo = new BitmapFactory.Options();

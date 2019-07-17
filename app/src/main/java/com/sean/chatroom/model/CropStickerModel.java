@@ -29,11 +29,11 @@ public class CropStickerModel {
     }
 
     //更新資料庫的sticker
-    public void updateSticker(final String userID, String oldSticker, Bitmap bitmap, final CropListener cropListener) {
+    public void updateSticker(final String userID, String oldSticker, final Bitmap bitmap, final CropListener cropListener) {
         File file = null;
         final String PhotoName = makePhotoName(20);
         try {
-            file = new File(saveSticker(oldSticker, PhotoName, ImageHandle.ProportionalCompression(bitmap)));
+            file = new File(saveSticker(oldSticker, PhotoName,bitmap));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,6 +64,7 @@ public class CropStickerModel {
 
             @Override
             public void onComplete() {
+                bitmap.recycle();
                 Log.i("Sean", "onComplete: ");
             }
         });
@@ -87,6 +88,7 @@ public class CropStickerModel {
         FileOutputStream fos = new FileOutputStream(file);
         image.compress(Bitmap.CompressFormat.JPEG, 100, fos);
         fos.close();
+        image.recycle();
         return file.getPath();
     }
 

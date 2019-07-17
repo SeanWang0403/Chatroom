@@ -32,7 +32,7 @@ public class CropStickerActivity extends AppCompatActivity implements View.OnCli
         oldSticker = getIntent().getExtras().getString("oldSticker");
         uriString = getIntent().getExtras().getString("uriString");
         init();
-        cropStickerPresenter = new CropStickerPresenter(this,this);
+        cropStickerPresenter = new CropStickerPresenter(this,getApplicationContext());
     }
 
     private void init() {
@@ -68,9 +68,10 @@ public class CropStickerActivity extends AppCompatActivity implements View.OnCli
         CropView.crop(Uri.parse(uriString)).execute(new CropCallback() {
             @Override
             public void onSuccess(Bitmap cropped) {
-                cropBitmap=cropped;
+                cropBitmap=ImageHandle.ProportionalCompression(cropped);
+                cropped.recycle();
                 result_init();
-                ResultPhoto.setImageBitmap(cropped);
+                ResultPhoto.setImageBitmap(cropBitmap);
             }
 
             @Override
@@ -102,6 +103,7 @@ public class CropStickerActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onFinish() {
+        cropBitmap.recycle();
         backUserInfoHome();
     }
 }
