@@ -4,13 +4,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.sean.chatroom.bean.ChatHistoryItem;
 import com.sean.chatroom.bean.FriendItem;
-import com.sean.chatroom.bean.UserInfoItem;
 import com.sean.chatroom.bean.Message;
 import com.sean.chatroom.bean.UserData;
+import com.sean.chatroom.bean.UserInfoItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -152,6 +151,7 @@ public class dbManager implements dbFunction {
                     list.add(new UserInfoItem("行動條碼", cursor.getString(cursor.getColumnIndex("qr_code"))));
                 }
                 emitter.onNext(list);
+                cursor.close();
                 emitter.onComplete();
             }
         }).subscribeOn(Schedulers.io());
@@ -177,6 +177,7 @@ public class dbManager implements dbFunction {
                     ));
                 }
                 emitter.onNext(list);
+                cursor.close();
                 emitter.onComplete();
             }
         }).subscribeOn(Schedulers.io());
@@ -201,6 +202,7 @@ public class dbManager implements dbFunction {
 
                 }
                 emitter.onNext(list);
+                cursor.close();
                 emitter.onComplete();
             }
         }).subscribeOn(Schedulers.io());
@@ -227,6 +229,7 @@ public class dbManager implements dbFunction {
                     ));
                 }
                 emitter.onNext(list);
+                cursor.close();
                 emitter.onComplete();
             }
         }).subscribeOn(Schedulers.io());
@@ -250,6 +253,7 @@ public class dbManager implements dbFunction {
                     ));
                 }
                 emitter.onNext(list);
+                cursor.close();
                 emitter.onComplete();
             }
         }).subscribeOn(Schedulers.io());
@@ -368,6 +372,7 @@ public class dbManager implements dbFunction {
                 } else {
                     emitter.onNext(false);
                 }
+                cursor.close();
                 emitter.onComplete();
             }
         });
@@ -385,6 +390,7 @@ public class dbManager implements dbFunction {
                 } else {
                     emitter.onNext(false);
                 }
+                cursor.close();
                 emitter.onComplete();
             }
         });
@@ -447,6 +453,7 @@ public class dbManager implements dbFunction {
                 } else {
                     emitter.onNext(false);
                 }
+                cursor.close();
                 emitter.onComplete();
             }
         });
