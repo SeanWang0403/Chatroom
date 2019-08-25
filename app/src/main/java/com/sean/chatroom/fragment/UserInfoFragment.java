@@ -144,9 +144,7 @@ public class UserInfoFragment extends Fragment implements UserInfoView, View.OnC
             case R.id.userdata_select_background:
                 startCrop = false;
                 if (checkNetWork()) {
-                    if (getStoragePermission()) {
-                        openGallery();
-                    }
+                    getStoragePermission();
                 } else {
                     Toast.makeText(getContext(), "沒有網路無法更新資料!!", Toast.LENGTH_SHORT).show();
                 }
@@ -161,35 +159,28 @@ public class UserInfoFragment extends Fragment implements UserInfoView, View.OnC
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if (which == 0) {
-                            if (getStoragePermission()) {
-                                openGallery();
-                            }
+                            getStoragePermission();
                         } else {
-                            if (getCameraPermission()) {
-                                openCamera();
-                            }
+                            getCameraPermission();
                         }
-
                     }
                 }).show();
     }
 
-    private boolean getStoragePermission() {
+    private void getStoragePermission() {
         if (ContextCompat.checkSelfPermission(getContext(), READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
                 ContextCompat.checkSelfPermission(getContext(), WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(), new String[]{READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE}, 123);
-            return false;
         } else {
-            return true;
+            openGallery();
         }
     }
 
-    private boolean getCameraPermission() {
+    private void getCameraPermission() {
         if (ContextCompat.checkSelfPermission(getContext(), CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(), new String[]{CAMERA}, 456);
-            return false;
         } else {
-            return true;
+            openCamera();
         }
     }
 
@@ -201,9 +192,9 @@ public class UserInfoFragment extends Fragment implements UserInfoView, View.OnC
     }
 
     /**
-        android 7.0開始 不允許使用file:// 的方式，傳遞一個 File否則會throw FileUriExposedException 造成Crash
-        所以必須使用FileProvider 通過 content://的模式替換掉 file:// 避免產生 FileUriExposedException而使APP Crash
-      **/
+     * android 7.0開始 不允許使用file:// 的方式，傳遞一個 File否則會throw FileUriExposedException 造成Crash
+     * 所以必須使用FileProvider 通過 content://的模式替換掉 file:// 避免產生 FileUriExposedException而使APP Crash
+     **/
     private void openCamera() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
@@ -288,7 +279,7 @@ public class UserInfoFragment extends Fragment implements UserInfoView, View.OnC
         this.userID = userID;
         this.Sticker = sticker;
         this.Background = background;
-        Log.i("Sean", "getUserPhoto: "+background);
+        Log.i("Sean", "getUserPhoto: " + background);
         setUserPhoto();
     }
 
